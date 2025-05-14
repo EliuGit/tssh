@@ -1,86 +1,86 @@
-# tssh - Terminal SSH Connection Manager
+# tssh - 终端SSH连接管理器
 
-tssh is a terminal-based SSH connection manager written in Go, featuring an interactive TUI for managing and connecting to SSH servers.
+tssh 是一个基于终端的SSH连接管理工具，采用Go语言编写，配备交互式TUI界面用于管理和连接SSH服务器。
 
-## Features
+## 主要功能
 
-- 🖥️ Interactive terminal user interface (TUI)
-- 🔒 Secure storage of connection details
-  - Passwords are encrypted before storage
-- 🔑 Supports both password and SSH key authentication
-- 📋 Easy management of SSH connections
-  - Add, edit, delete connections
-  - Quick connect to saved servers
-- 🔍 Filter connections by name/host
-- 🛠️ Simple configuration in `~/.tssh/`
+- 🖥️ 交互式终端用户界面 (TUI)
+- 🔒 安全存储连接信息
+  - 密码在存储前会加密
+- 🔑 支持密码和SSH密钥认证
+- 📋 简单便捷的SSH连接管理
+  - 添加、编辑、删除连接
+  - 快速连接已保存的服务器
+- 🔍 按名称/主机过滤连接
+- 🛠️ 简单的配置位于 `~/.xssh/`
 
-## Installation
+## 安装说明
 
-### Prerequisites
+### 前提条件
 
-- Go 1.16 or later
-- `sshpass` (for password authentication)
-  - On Ubuntu/Debian: `sudo apt install sshpass`
-  - On macOS: `brew install hudochenkov/sshpass/sshpass`
+- Go 1.16 或更高版本
+- `sshpass` (支持密码认证)
+  - Ubuntu/Debian系统: `sudo apt install sshpass`
+  - macOS系统: `brew install hudochenkov/sshpass/sshpass`
 
-### From Source
+### 从源代码安装
 
-1. Clone the repository:
+1. 克隆仓库：
    ```bash
-   git clone https://github.com/yourusername/tssh.git
+   git clone https://github.com/EliuGit/tssh.git 
    cd tssh
    ```
 
-2. Build and install:
+2. 编译并安装：
    ```bash
    go build -o tssh
    ```
 
-3. Run the program:
+3. 运行程序：
    ```bash
    ./tssh
    ```
 
-## Usage
+## 使用方法
 
-After starting tssh, you'll see the main interface with your saved connections.
+启动tssh后，您将看到主界面及已保存的连接列表。
 
-### Key Bindings
+### 键盘快捷键
 
-| Key       | Action               |
+| 键位      | 功能描述             |
 |-----------|----------------------|
-| `Enter`   | Connect to server    |
-| `p`       | Connect to sftpserver|
-| `a`       | Add new connection   |
-| `e`       | Edit connection      |
-| `d`       | Delete connection    |
-| `/`       | Filter connections   |
-| `Esc`     | Cancel filter        |
-| `q`       | Quit program        |
+| `Enter`   | 连接选中的服务器     |
+| `p`       | 连接SFTP服务器       |
+| `a`       | 新增连接             |
+| `e`       | 编辑连接             |
+| `d`       | 删除连接             |
+| `/`       | 按关键字过滤连接     |
+| `Esc`     | 取消当前过滤         |
+| `q`       | 退出程序            |
 
-### Adding a Connection
+### 新增连接
 
-1. Press `a` to add a new connection
-2. Fill in the connection details:
-   - Name: Descriptive name for the connection
-   - Host: Server hostname or IP
-   - Port: SSH port (default: 22)
-   - Username: Login username
-   - Authentication method: Password or SSH key
-3. Press `Enter` to save
+1. 按下 `a` 键新增连接
+2. 输入连接详细信息：
+   - 名称: 连接的描述性名称
+   - 主机: 服务器主机名或IP地址
+   - 端口: SSH端口号（默认为22）
+   - 用户名: 登录用户名
+   - 认证方式: 选择密码或SSH密钥
+3. 按下回车键保存连接信息
 
-## Configuration
+## 配置文件
 
-tssh stores its configuration and database in `~/.tssh/`:
-- `connections.db` - SQLite database with connection info
-- Configuration files (if any) will be stored here
+tssh 将其配置和数据库存储在 `~/.xssh/` 目录中：
+- `connections.db` - 包含连接信息的SQLite数据库
+- 配置文件（如存在）也存储在此处
 
-## Security
+## 安全特性
 
-- Passwords are encrypted before being stored in the database
-- SSH keys are not stored - only paths to key files are saved
-- Database file has restricted permissions (0600)
+- 所有密码都会在存储前进行加密处理
+- 不存储SSH密钥 - 仅保存密钥文件的路径
+- 数据库文件设置了严格的访问权限 (0600)
 
-## License
+## 开源协议
 
 MIT
