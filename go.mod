@@ -1,4 +1,4 @@
-module xssh
+module tssh
 
 go 1.23.0
 

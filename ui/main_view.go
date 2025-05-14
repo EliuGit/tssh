@@ -4,9 +4,8 @@ import (
 	"fmt"
 	"reflect"
 	"strings"
-
-	"xssh/database"
-	"xssh/models"
+	"tssh/database"
+	"tssh/models"
 
 	"github.com/charmbracelet/bubbles/key"
 	"github.com/charmbracelet/bubbles/table"

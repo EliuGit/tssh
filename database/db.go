@@ -3,7 +3,7 @@ package database
 import (
 	"database/sql"
 	"errors"
-	"xssh/models"
+	"tssh/models"
 
 	_ "github.com/mattn/go-sqlite3"
 )

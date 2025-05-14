@@ -5,8 +5,7 @@ import (
 	"os"
 	"os/exec"
 	"strings"
-
-	"xssh/models"
+	"tssh/models"
 )
 
 func GetValidPath(inputPath string, defaultPath string) string {

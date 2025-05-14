@@ -4,10 +4,9 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-
-	"xssh/database"
-	"xssh/ssh"
-	"xssh/ui"
+	"tssh/database"
+	"tssh/ssh"
+	"tssh/ui"
 
 	tea "github.com/charmbracelet/bubbletea"
 )

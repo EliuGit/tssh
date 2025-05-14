@@ -3,9 +3,8 @@ package ui
 import (
 	"strconv"
 	"strings"
-
-	"xssh/database"
-	"xssh/models"
+	"tssh/database"
+	"tssh/models"
 
 	"github.com/charmbracelet/bubbles/textinput"
 	tea "github.com/charmbracelet/bubbletea"

@@ -1,7 +1,7 @@
 package ui
 
 import (
-	"xssh/models"
+	"tssh/models"
 
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
