@@ -31,11 +31,11 @@ func Connect(rctx *models.RunContext) {
 			fmt.Printf("Failed to decrypt password: %v\n", err)
 			return
 		}
-		cmd = exec.Command("sshpass", "-p", pass, string(rctx.Command), protArg, fmt.Sprintf("%d", conn.Port), userHost)
+		cmd = exec.Command("sshpass", "-p", pass, string(rctx.Command), "-o", "StrictHostKeyChecking=no", protArg, fmt.Sprintf("%d", conn.Port), userHost)
 	case models.UseKey:
 		keyPath := strings.TrimSpace(conn.PrivateKey)
 		keyPath = GetValidPath(keyPath, "~/.ssh/id_rsa")
-		cmd = exec.Command(string(rctx.Command), "-i", keyPath, protArg, fmt.Sprintf("%d", conn.Port), userHost)
+		cmd = exec.Command(string(rctx.Command), "-i", keyPath, "-o", "StrictHostKeyChecking=no", protArg, fmt.Sprintf("%d", conn.Port), userHost)
 	}
 	// 绑定标准输入、输出和错误到当前终端
 	cmd.Stdin = os.Stdin
